@@ -1,6 +1,18 @@
-# lista_repo
+<h1 align="center">
+  📱 Listar Repositório 📱
+</h1>
 
-A new Flutter project.
+<p align="center">
+  <img src="https://img.shields.io/github/last-commit/Arthurcn96/lista_repo?logo=github&style=for-the-badge">
+  <img src="https://img.shields.io/github/repo-size/Arthurcn96/lista_repo?style=for-the-badge&logo=appveyor">
+  <img src="https://img.shields.io/badge/Status-Active-green?style=for-the-badge&logo=appveyor">
+</p>
+
+Projeto Desenvolvido em 📱 Flutter que usa a API do Github pra gerar uma lista com todos os projetos em um repositório. 
+
+<p align="center">
+  <img width="300" src="https://raw.githubusercontent.com/Arthurcn96/lista_repo/main/screen.png">
+</p>
 
 ## Getting Started
 
