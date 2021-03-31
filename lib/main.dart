@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
-import 'package:lista_repo/screen/list/repository_screen.dart';
+
+import 'routes.dart';
+import 'screen/list/repository_screen.dart';
 
 
 void main() {
@@ -17,7 +19,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       darkTheme: ThemeData.dark(),
-      home: Repositories(),
+      //home: Repositories()
+      initialRoute: Repositories.routeName,
+      routes: routes,
     );
   }
 }

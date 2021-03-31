@@ -4,11 +4,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
-import 'package:lista_repo/screen/list/listagem.dart';
+import 'components/listagem.dart';
 
 import '../../PDO/PDO_projeto.dart';
 
 class Repositories extends StatelessWidget {
+  
+static String routeName = "/repo";
+
 List<Projeto> projetos = [];
 
     Future<List<Projeto>> _getProjetos() async{
