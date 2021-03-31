@@ -11,9 +11,9 @@
 Projeto Desenvolvido em 📱 Flutter que usa a API do Github pra gerar uma lista com todos os projetos em um repositório. 
 
 <p align="center">
-  <img width="300" src="https://raw.githubusercontent.com/Arthurcn96/lista_repo/main/screen1.png">
-  <img width="300" src="https://raw.githubusercontent.com/Arthurcn96/lista_repo/main/screen2.png">
-  <img width="300" src="https://raw.githubusercontent.com/Arthurcn96/lista_repo/main/screen3.png">
+  <img height="400" src="https://raw.githubusercontent.com/Arthurcn96/lista_repo/main/screen1.png">
+  <img height="400" src="https://raw.githubusercontent.com/Arthurcn96/lista_repo/main/screen2.png">
+  <img height="400" src="https://raw.githubusercontent.com/Arthurcn96/lista_repo/main/screen3.png">
 </p>
 
 ## Getting Started
