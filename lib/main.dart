@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:lista_repo/screen/splash/splash_screen.dart';
 
 import 'routes.dart';
 import 'screen/list/repository_screen.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       ),
       darkTheme: ThemeData.dark(),
       //home: Repositories()
-      initialRoute: Repositories.routeName,
+      initialRoute: SplashScreen.routeName,
       routes: routes,
     );
   }
