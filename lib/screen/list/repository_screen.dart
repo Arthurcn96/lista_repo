@@ -40,16 +40,6 @@ List<Projeto> projetos = [];
         title: Text('Repositorio'),
         flexibleSpace: Container(
           color: Colors.blue,
-        //   decoration: BoxDecoration(
-        //     gradient: LinearGradient(
-        //       begin: Alignment.topLeft,
-        //         end: Alignment.bottomRight,
-        //         colors: <Color>[
-        //         Colors.blue,
-        //         Colors.purple,
-        //       ]
-        //     )          
-        //   ),        
         ),   
       ),
       body: Container(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lista_repo/screen/search/searchInput_screen.dart';
 
-import '../../list/repository_screen.dart';
+import '../../../default_button.dart';
 
 class Body extends StatefulWidget {
   @override
@@ -13,70 +14,53 @@ class _BodyState extends State<Body> {
     return SafeArea(
       child: SizedBox(
         width: double.infinity,
-        child: Column(
-          children: <Widget>[
-            Expanded(
-              flex:4,
-              child: Padding(
-                padding: const EdgeInsets.all(24.0),
-                child: Column(
-                  children: <Widget>[
-                    Spacer(),
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: <Widget>[
+              Expanded(
+                flex:10,
+                  child: Column(
+                    children: <Widget>[
+                      Spacer(),
 
-                    Text(
-                      "Bem vindo",
-                      style: TextStyle(
-                        fontSize: 42,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.blue[700],
+                      Text(
+                        "Bem vindo",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w800,
+                          color: Colors.blue[700],
+                          fontSize: 62,
+                        ),
                       ),
-                    ),
-                    Spacer(),
-                    Text(
-                      "Aplicativo de Listagem de repositório",
-                      style: TextStyle(
-                        color: Colors.black38,
-                        fontWeight: FontWeight.w500,
+                      Text(
+                        "Aplicativo de Listagem de repositório",
+                        style: TextStyle(
+                          color: Colors.black38,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
-                    ),
-                    Spacer(flex:10),
-                    Image.asset(
-                      "assets/images/splash.png",
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Expanded(
-              flex:1,
-              child:SizedBox(
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(40.0),
-              child: SizedBox(
-                width: double.infinity,
-                height: 50,
-                child: FlatButton(
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                  onPressed: () {
-                    Navigator.pushNamed(context, Repositories.routeName);
-                  },
-                  color: Colors.blue,
-                  child: Text("Continuar",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 26,
-                      fontWeight: FontWeight.w200,
-                    ),
+                      Spacer(flex:3),
+                      Image.asset(
+                        "assets/images/Octocat1.png",
+                      ),
+                    ],
                   ),
                 ),
+              Expanded(
+                flex:1,
+                child: SizedBox(),
               ),
-            ),
-          ],
+                DefaultButton(
+                  text: "Continue",
+                  press: (){Navigator.pushNamed(context, SearchRepoScreen.routeName);},
+                ),
+                Spacer(flex:1),
+            ],
+          ),
         ),
       ),
     );
   }
 }
+
