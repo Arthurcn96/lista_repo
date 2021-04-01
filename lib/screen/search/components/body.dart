@@ -26,9 +26,15 @@ class Body extends StatelessWidget {
                 Text(
                   "Me diga o nome do usuário que \ndirei os repositórios...",
                   textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black54,
+                  ),
                 ),
                 SizedBox(height: 50),
                 SearchForm(),
+                SizedBox(height: 50),
+
               ],
         ),
             ),

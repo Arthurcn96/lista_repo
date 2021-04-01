@@ -1,9 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:lista_repo/screen/splash/splash_screen.dart';
-
 import 'routes.dart';
-import 'screen/list/repository_screen.dart';
 
 
 void main() {
@@ -13,14 +12,17 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      
+    ]);
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-
-        primarySwatch: Colors.blue,
-      ),
-      darkTheme: ThemeData.dark(),
+      themeMode: ThemeMode.light, 
       //home: Repositories()
+      // initialRoute: SplashScreen.routeName,
+      // initialRoute: ErroScreen.routeName,
       initialRoute: SplashScreen.routeName,
       routes: routes,
     );

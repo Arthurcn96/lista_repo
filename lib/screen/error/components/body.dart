@@ -19,30 +19,31 @@ class _BodyState extends State<Body> {
           child: Column(
             children: <Widget>[
               Expanded(
-                flex:10,
+                flex:12,
                   child: Column(
                     children: <Widget>[
                       Spacer(),
 
                       Text(
-                        "Bem vindo",
+                        "Opss...",
                         style: TextStyle(
                           fontWeight: FontWeight.w800,
                           color: Colors.blue[700],
-                          fontSize: 62,
+                          fontSize: 58,
                         ),
                       ),
                       Text(
-                        "Aplicativo de Listagem de repositório do Github",
+                        "Não consegui achar esse usuário \nDigitou o nome certo?",
                         style: TextStyle(
                           color: Colors.black54,
                           fontWeight: FontWeight.w500,
+                          fontSize: 16,
                         ),
                         textAlign: TextAlign.center,
                       ),
                       Spacer(flex:3),
                       Image.asset(
-                        "assets/images/OctocatSplash.png",
+                        "assets/images/Octocat404.png",
                       ),
                     ],
                   ),
@@ -52,7 +53,7 @@ class _BodyState extends State<Body> {
                 child: SizedBox(),
               ),
               DefaultButton(
-                text: "Continue",
+                text: "Voltar",
                 press: (){Navigator.pushNamed(context, SearchRepoScreen.routeName);},
               ),
               SizedBox(height: 50),

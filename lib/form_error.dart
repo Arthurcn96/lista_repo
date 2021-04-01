@@ -17,6 +17,7 @@ class FormError extends StatelessWidget {
 
   Row formErroText({String erro}) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
         children:[
           Icon(
             Icons.error_outline_outlined,
@@ -26,7 +27,12 @@ class FormError extends StatelessWidget {
           SizedBox(
             width: 10,
           ),
-          Text(erro),
+          Text(
+            erro,
+            style: TextStyle(
+              color: Colors.black54,
+            ),
+          ),
         ]
       );
   }

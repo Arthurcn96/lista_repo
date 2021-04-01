@@ -21,7 +21,6 @@ final List<String> erros = [];
         children: [
           TextFormField(
             validator: (value) {
-                print(erros.length);
                 if (value.isEmpty && erros.length == 0) {
                   setState(() {
                       erros.add("Digite o nome do Usuario");
@@ -29,11 +28,17 @@ final List<String> erros = [];
                 }else if(value.isNotEmpty){
                   setState(() {
                       erros.remove("Digite o nome do Usuario");
-                      Navigator.pushNamed(context, Repositories.routeName);
+                      Navigator.pushNamed(
+                        context,
+                        Repositories.routeName,
+                        arguments: {
+                          "user": value,
+                        } );
                   });
                 }
             },
             decoration: InputDecoration(
+              
               labelText: "User",
               hintText: "Usuário",
               floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -51,13 +56,15 @@ final List<String> erros = [];
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(28),
-                borderSide: BorderSide(color: Colors.blue[100]),
+                borderSide: BorderSide(color: Colors.blue[200]),
                 gapPadding: 10,
               ),
             ),
           ),
-          SizedBox(height: 50),
+          SizedBox(height: 25),
           FormError(erros: erros),
+          SizedBox(height: 25),
+
           DefaultButton(
             text: "Mostra",
             press: (){

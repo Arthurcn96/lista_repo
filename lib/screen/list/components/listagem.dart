@@ -24,15 +24,11 @@ class Listagem extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(_borderRadius),
-                // gradient: LinearGradient(
-                //   colors: [Colors.red, Colors.pink],
-                //   begin: Alignment.topLeft,
-                //   end: Alignment.bottomRight),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 12,
-                    offset: Offset(0,6),
+                    color: Colors.black12,
+                    blurRadius: 6,
+                    offset: Offset(0,3),
                   ),
                 ],
               ),

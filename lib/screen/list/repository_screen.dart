@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lista_repo/screen/error/erro_screen.dart';
+import '../../buildAppBar.dart';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -14,47 +16,17 @@ static String routeName = "/repo";
 
 List<Projeto> projetos = [];
 
-    Future<List<Projeto>> _getProjetos() async{
-    String repository = "Arthurcn96";
-    var url = Uri.parse('https://api.github.com/users/${repository}/repos');
-
-    var response = await http.get(url);
-
-    var jsonData = json.decode(response.body);
-
-    for (var data in jsonData) {
-      Projeto projeto = Projeto(data["name"],data["language"], data["url"], data["description"]);
-
-      projetos.add(projeto);
-
-    }
-
-  }
-
   @override
   Widget build(BuildContext context) {
+    //Pega os argumentos passados no Navigator
+    final Map<String, Object>user = ModalRoute.of(context).settings.arguments;
 
     return Scaffold(
-      appBar: new AppBar(
-        centerTitle: true,
-        title: Text('Repositorio'),
-        flexibleSpace: Container(
-          color: Colors.blue,
-        ),   
-      ),
+      appBar: buildAppBar("Repositório"),
       body: Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-                colors: <Color>[
-                Colors.blue[100],
-                Colors.purple[50],
-              ]
-            )          
-          ), 
+
         child: FutureBuilder(
-          future: _getProjetos(),
+          future: _getProjetos(context, user["user"]),
           builder: (BuildContext context, AsyncSnapshot snapshot){
 
             return ListView.builder(
@@ -69,5 +41,28 @@ List<Projeto> projetos = [];
         ),
       )
     );
+  }
+
+    Future<List<Projeto>> _getProjetos(BuildContext context, String user ) async{
+      String repository = user;
+      var url = Uri.parse('https://api.github.com/users/${repository}/repos');
+      var response = await http.get(url);
+      print(response.statusCode.toString());
+      if(response.statusCode.toString() == "200"){
+        var jsonData = json.decode(response.body);
+
+        for (var data in jsonData) {
+          Projeto projeto = Projeto(data["name"],data["language"], data["url"], data["description"]);
+          projetos.add(projeto);
+        }
+      }else if(response.statusCode.toString() == "404"){
+        // Usuario nao existe
+        Navigator.pushNamed(context, ErroScreen.routeName);
+
+      }else{
+        // Aqui que deu um ruim geral
+      }
+
+
   }
 }
